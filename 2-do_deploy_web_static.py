@@ -15,7 +15,6 @@ def do_deploy(archive_path):
     from os.path import isfile
     from fabric.api import env, run, put
 
-    env.hosts = ['54.227.197.97', '54.237.28.128']
 
     if not isfile(archive_path):
         return False
