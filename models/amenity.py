@@ -1,13 +1,18 @@
-#!/usr/bin/python3
-""" State Module for HBNB project """
+#!/usr/bin/python
+""" holds class Amenity"""
+import models
 from models.base_model import BaseModel, Base
-from models import eng
+from os import getenv
+import sqlalchemy
 from sqlalchemy import Column, String
-class Amenity(BaseModel, Base):
-    """class that represent amenity model"""
-    if eng == "db":
-        __tablename__ = "amenities"
+from sqlalchemy.orm import relationship
 
+
+class Amenity(BaseModel, Base):
+    """Representation of Amenity """
+    if models.storage_t == 'db':
+        __tablename__ = 'amenities'
         name = Column(String(128), nullable=False)
     else:
         name = ""
+
