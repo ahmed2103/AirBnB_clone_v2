@@ -19,7 +19,6 @@ class State(BaseModel, Base):
         name = ""
 
 
-    if models.storage_t != "db":
     @property
     def cities(self):
         """getter for list of city instances related to the state"""
