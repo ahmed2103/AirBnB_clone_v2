@@ -18,9 +18,8 @@ def shutdown_session(exception):
 @app.route('/states_list')
 def states_list():
     """Renders the list of states in html templete"""
-    states_list = storage.all(State).values()
-    sorted_states = sorted(states_list, key=lambda x: x.name)
-    return render_template('7-states_list.html', states=sorted_states)
+    states = storage.all("State").values()
+    return render_template('7-states_list.html', states=states)
 
 
 if __name__ == '__main__':
