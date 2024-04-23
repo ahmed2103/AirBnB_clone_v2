@@ -1,5 +1,5 @@
 #!/usr/bin/python
-""" holds class Place"""
+"""class Place"""
 import models
 from models.base_model import BaseModel, Base
 from os import getenv
@@ -49,10 +49,6 @@ class Place(BaseModel, Base):
         latitude = 0.0
         longitude = 0.0
         amenity_ids = []
-
-    def __init__(self, *args, **kwargs):
-        """initializes Place"""
-        super().__init__(*args, **kwargs)
 
     if models.storage_t != 'db':
         @property
